@@ -17,7 +17,7 @@ function startGuessing(){
     
     // on verifie si c'est un chiffre dans l'input
     if(isNaN(userGuess)){
-        sentence.innerHTML=("Mettre un chiffre s'il vous plait")
+        sentence.innerHTML=("Mettre un chiffre s'il vous plait.")
         return;
     }
     // incrementation du nombre d'essai
@@ -25,7 +25,7 @@ function startGuessing(){
 
     if (userGuess === getRandomNumber) {
         sentence.innerHTML=`Bravo &#9989; ! Tu as trouvé le nombre magique avec ${attempts} tentatives.
-        Tape un nouveau chiffre si tu veux faire une nouvelle partie`;
+        Tape un nouveau chiffre si tu veux faire une nouvelle partie.`;
         attempt.innerHTML='';
         resetGame();
       } else if (userGuess < getRandomNumber) {
