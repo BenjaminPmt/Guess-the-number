@@ -8,8 +8,8 @@ let attempts = 0;
 const button = document.querySelector('.btn');
 button.addEventListener("click", startGuessing)
 
-let sentence = document.querySelector('.sentence')
-
+let sentence = document.querySelector('.sentence');
+let attempt = document.querySelector('.attempt');
 function startGuessing(){
 
     const guessInput = document.getElementById('inputNumber')
@@ -20,17 +20,20 @@ function startGuessing(){
         sentence.innerHTML=("Mettre un chiffre s'il vous plait")
         return;
     }
-
     // incrementation du nombre d'essai
     attempts++
 
     if (userGuess === getRandomNumber) {
-        sentence.innerHTML=`Bravo ! Tu as trouvé le nombre magique avec ${attempts} tentatives.`;
+        sentence.innerHTML=`Bravo &#9989; ! Tu as trouvé le nombre magique avec ${attempts} tentatives.
+        Tape un nouveau chiffre si tu veux faire une nouvelle partie`;
+        attempt.innerHTML='';
         resetGame();
       } else if (userGuess < getRandomNumber) {
-        sentence.innerHTML="Trop bas ! Essai avec un chiffre plus grand.";
+        sentence.innerHTML="&#10060; Trop bas ! Essaye avec un chiffre plus grand. &#128316;";
+        attempt.innerHTML=`Tu es à ${attempts} tentative(s) !`
       } else {
-        sentence.innerHTML="Trop grand ! Essai avec un chiffre plus petit.";
+        sentence.innerHTML="&#10060; Trop grand ! Essaye avec un chiffre plus petit. &#128317;";
+        attempt.innerHTML=`Tu es à ${attempts} tentative(s) !`
       }
     guessInput.value = "";
 }
