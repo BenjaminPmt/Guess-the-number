@@ -1,7 +1,6 @@
 
 // Generation du nombre aleatoire
 let getRandomNumber = Math.floor(Math.random()* 100) + 1;
-console.log(getRandomNumber)
 
 let attempts = 0; 
 let sentence = document.querySelector('.sentence');
